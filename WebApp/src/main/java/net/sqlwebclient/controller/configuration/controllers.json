@@ -1,0 +1,20 @@
+{
+    "controllers": [
+        "net.sqlwebclient.controller.QueryController",
+        "net.sqlwebclient.controller.DialectController",
+        "net.sqlwebclient.controller.ConnectionDetailsController",
+        "net.sqlwebclient.controller.TranslationController",
+        "net.sqlwebclient.controller.LanguageController",
+        "net.sqlwebclient.controller.SettingsController",
+        "net.sqlwebclient.controller.StatisticsController",
+        "net.sqlwebclient.controller.QueryStatisticsController",
+        "net.sqlwebclient.controller.DatabaseInfoController",
+        "net.sqlwebclient.controller.AboutController",
+        "net.sqlwebclient.controller.DDLController",
+        "net.sqlwebclient.controller.ExportController",
+        "net.sqlwebclient.controller.FileUploadController",
+        "net.sqlwebclient.controller.CustomJavascriptController",
+        "net.sqlwebclient.controller.StaticPageController",
+        "net.sqlwebclient.controller.WrongAccessController"
+    ]
+}

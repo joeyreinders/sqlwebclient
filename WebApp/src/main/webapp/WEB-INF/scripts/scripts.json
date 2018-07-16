@@ -1,0 +1,14 @@
+{
+    "scripts":[
+        "WebSqlClient.js",
+        "IndexController.js",
+        "QueryController.js",
+        "SettingsController.js",
+        "StatisticsController.js",
+        "ConnectionsController.js",
+        "DialectController.js",
+        "DatabaseInfoController.js",
+        "AboutController.js",
+        "service/Services.js"
+    ]
+}

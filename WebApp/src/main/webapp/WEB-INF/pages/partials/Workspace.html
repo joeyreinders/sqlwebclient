@@ -1,0 +1,79 @@
+<div id="divSqlQueryCtrl" data-ng-controller="SqlQueryCtrl">
+    <textarea rows="4" style="width:100%" data-ng-model="queryString" id="sqlQueryTextArea" ui-codemirror></textarea>
+    <button type="button" class="btn" data-ng-click="doQuery()">{{ 'workspace.execute' | translate}}</button>
+    <!-- Export Button -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            Export <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <!-- ng-mousedown="csv.generate()" ng-href="{{ csv.link() }}" download="test.csv" -->
+            <li><a data-ng-click="exportTo('csv')" target="_blank" download="export.csv">{{ 'workspace.csv' | translate}}</a></li>
+            <li><a data-ng-click="exportTo('sql')" target="_blank">{{ 'workspace.sql' | translate}}</a></li>
+            <li><a data-ng-click="exportTo('xml')" target="_blank">XML</a></li>
+        </ul>
+    </div>
+    <div data-ng-show="showLoading">Loading ...</div>
+    <label>{{result.message.error}}</label>
+    <label>{{result.message.info}}</label>
+    <label>{{result.message.duration}}</label>
+
+    <table ng-table="tableParams" show-filter="false" class="table">
+        <thead>
+        <tr>
+            <th data-ng-repeat="column in columns" data-ng-show="column.visible"
+                class="text-center sortable" data-ng-class="{
+                    'sort-asc': tableParams.isSortBy(column.field, 'asc'),
+                    'sort-desc': tableParams.isSortBy(column.field, 'desc')
+                  }"
+                ng-click="tableParams.sorting(column.field, tableParams.isSortBy(column.field, 'asc') ? 'desc' : 'asc')">
+                {{column.title}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="row in $data">
+            <td data-ng-repeat="column in columns" data-ng-show="column.visible" sortable="column.field">
+                {{row[column.field]}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+//Script for the ctrl + enter keypress
+$('#sqlQueryTextArea').keypress(function(event) {
+    if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
+        var ctrl = $('#divSqlQueryCtrl');
+        event.preventDefault();
+        var selection = getSelection();
+        if(selection) {
+            angular.element(ctrl).scope().executeQuery(selection);
+        } else {
+            angular.element(ctrl).scope().doQuery();
+        }
+    }
+});
+
+//Getting the current selection in the textarea
+function getSelection()
+{
+  var textComponent = document.getElementById('sqlQueryTextArea');
+  var selectedText;
+  // IE version
+  if (document.selection != undefined)
+  {
+    textComponent.focus();
+    var sel = document.selection.createRange();
+    selectedText = sel.text;
+  }
+  // Mozilla version
+  else if (textComponent.selectionStart != undefined)
+  {
+    var startPos = textComponent.selectionStart;
+    var endPos = textComponent.selectionEnd;
+    selectedText = textComponent.value.substring(startPos, endPos)
+  }
+  return selectedText;
+}
+</script>

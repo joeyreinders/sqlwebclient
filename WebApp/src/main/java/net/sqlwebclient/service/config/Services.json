@@ -1,0 +1,84 @@
+{
+    "configs": [
+        {
+            "ifCls": "net.sqlwebclient.service.ConnectionDetailsService",
+            "implCls": "net.sqlwebclient.service.impl.ConnectionDetailsServiceImpl",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.DatabaseInfoService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultDatabaseInfoService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.JsonConversionService",
+            "implCls": "net.sqlwebclient.service.impl.JsonConversionServiceImpl",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.QueryService",
+            "implCls": "net.sqlwebclient.service.impl.QueryServiceImpl",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.ThreadService",
+            "implCls": "net.sqlwebclient.service.impl.ThreadServiceImpl",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.TranslationService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultTranslationService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.SettingsService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultSettingsService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.StatisticsService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultStatisticsService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.LocalStorageService",
+            "implCls": "net.sqlwebclient.service.impl.UserPreferencesLocalStorage",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.AboutService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultAboutService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.StaticResourceService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultStaticResourceService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.DDLService",
+            "implCls": "net.sqlwebclient.service.impl.DDLServiceImpl",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.ExportService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultExportService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.UploadService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultUploadService",
+            "scope": "Singleton"
+        },
+        {
+            "ifCls": "net.sqlwebclient.service.FileService",
+            "implCls": "net.sqlwebclient.service.impl.DefaultFileService",
+            "scope": "Singleton"
+        },
+         {
+             "ifCls": "net.sqlwebclient.service.UsageService",
+             "implCls": "net.sqlwebclient.service.impl.DefaultUsageService",
+             "scope": "Singleton"
+         }
+    ]
+}

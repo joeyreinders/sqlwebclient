@@ -1,0 +1,14 @@
+{
+    "scripts":[
+        "js/jquery-2.1.1.min.js",
+        "js/angular.js",
+        "js/angular-resource.js",
+        "js/angular-route.js",
+        "js/ui-bootstrap-tpls-0.11.0.js",
+        "js/bootstrap.min.js",
+        "js/ng-table.js",
+        "js/ng-table-export.js",
+        "js/angular-translate.js",
+        "js/angular-translate-loader-static-files.js"
+    ]
+}

@@ -1,0 +1,25 @@
+<div data-ng-controller="AboutCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Application information</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li>Developer: Joey Reinders</li>
+                <li>Email: <a href="mailto:joey.reinders@gmail.com">joey.reinders@gmail.com</a></li>
+                <li>Version: {{about.version}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">External Libraries</h3>
+        </div>
+        <div class="panel-body">
+            <ul>
+                <li data-ng-repeat="(key, value) in about.externalLibraries">{{key}} - <a href="{{value}}" target="_blank">{{value}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{
+    "modules":[
+        "net.sqlwebclient.core.connections.DatabaseConnectionsModule",
+        "net.sqlwebclient.service.config.ServiceModule",
+        "net.sqlwebclient.controller.configuration.ServletsModule",
+        "net.sqlwebclient.exception.config.ExceptionModule"
+    ]
+}

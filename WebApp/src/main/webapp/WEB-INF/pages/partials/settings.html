@@ -1,0 +1,34 @@
+<form class="form-horizontal" role="form" data-ng-controller="SettingsCtrl">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">{{ 'Language' | translate }}:</label>
+        <div class="col-sm-10">
+            <select data-ng-model="appSettings.LANGUAGE"
+                    data-ng-change="saveSetting('LANGUAGE')"
+                    data-ng-options="lang.uuid as lang.name for lang in languages"
+                    >
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Pagination Size:</label>
+        <div class="col-sm-10">
+            <select data-ng-model="appSettings.PAGINATION_DEFAULT_VALUE"
+                    data-ng-change="saveSetting('PAGINATION_DEFAULT_VALUE')">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Java Console Logging:</label>
+        <div class="col-sm-10">
+            <input type="checkbox"
+                   data-ng-model="appSettings.JAVA_CONSOLE_LOGGING"
+                   data-ng-options="saveSetting('JAVA_CONSOLE_LOGGING')">
+        </div>
+    </div>
+</form>

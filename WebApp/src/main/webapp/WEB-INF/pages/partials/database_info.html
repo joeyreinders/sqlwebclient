@@ -1,0 +1,64 @@
+<div data-ng-controller="DbInfoCtrl">
+    <div class="row">
+        <table width="100%">
+            <tr>
+                <td width="30%">
+                    <dl class="dl-horizontal">
+                        <dt>{{'db.schema' | translate}}</dt>
+                        <dd>{{dbInfo.schemaName}}</dd>
+                        <dt>{{'db.product_name' | translate}}</dt>
+                        <dd>{{dbInfo.databaseProductName}}</dd>
+                        <dt>{{'db.product_version' | translate}}</dt>
+                        <dd>{{dbInfo.databaseProductVersion}}</dd>
+                    </dl>
+                </td>
+                <td width="40%">
+                    <select multiple class="form-control" data-ng-model="selection" data-ng-change="doSelection()">
+                        <option data-ng-repeat="table in dbInfo.tables" value="{{table.tableName}}">
+                            {{table.tableName}}
+                        </option>
+                    </select>
+                </td>
+                <td width="30%">
+                    <dl class="dl-horizontal">
+                        <dt>{{'db.table_name' | translate}}</dt>
+                        <dd>{{selectedTable.tableName}}</dd>
+                        <dt>{{'db.table_type' | translate}}</dt>
+                        <dd>{{selectedTable.tableType}}</dd>
+                        <dt>{{'db.record_count' | translate}}</dt>
+                        <dd>{{selectedTable.records}}</dd>
+                        <dt>{{'db.remark' | translate}}</dt>
+                        <dd>{{selectedTable.remarks}}</dd>
+                    </dl>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>{{'db.column_name' | translate}} </th>
+            <th>{{'db.type_name' | translate}}</th>
+            <th>{{'db.size' | translate}}</th>
+            <th>{{'db.decimal_digits' | translate}}</th>
+            <th>{{'db.nullable' | translate}}</th>
+            <th>{{'db.auto_increment' | translate}}</th>
+            <th>{{'db.primary_key' | translate}}</th>
+            <th>{{'db.remark' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="column in selectedTable.columns">
+            <td>{{column.columnName}}</td>
+            <td>{{column.typeName}}</td>
+            <td>{{column.size}}</td>
+            <td>{{column.decimalDigits}}</td>
+            <td>{{column.nullable}}</td>
+            <td>{{column.autoIncrement}}</td>
+            <td>{{column.primaryKeys}}</td>
+            <td>{{column.remarks}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
